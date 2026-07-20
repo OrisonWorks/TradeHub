@@ -5,6 +5,8 @@ on:
     branches: ['main', 'master']
   workflow_dispatch:
 
+# Force workflow to always run on latest code
+
 permissions:
   contents: read
   pages: write
