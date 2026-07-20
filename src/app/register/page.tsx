@@ -179,7 +179,7 @@ export default function RegisterPage() {
                 <Label htmlFor="category">Business Category *</Label>
                 <Select
                   value={formData.category}
-                  onValueChange={(value) => setFormData({ ...formData, category: value })}
+                  onValueChange={(value) => setFormData({ ...formData, category: value || '' })}
                   required
                 >
                   <SelectTrigger>
