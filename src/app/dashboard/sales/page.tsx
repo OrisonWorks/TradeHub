@@ -196,10 +196,10 @@ export default function SalesPage() {
     <div className="flex h-screen bg-slate-50">
       <Sidebar />
       <div className="flex-1 overflow-auto">
-        <div className="p-8">
-          <h1 className="text-3xl font-bold mb-8">Point of Sale</h1>
+        <div className="p-4 lg:p-8 pt-16 lg:pt-8">
+          <h1 className="text-2xl lg:text-3xl font-bold mb-6 lg:mb-8">Point of Sale</h1>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
             <div className="lg:col-span-2">
               <Card>
                 <CardHeader>
@@ -215,7 +215,7 @@ export default function SalesPage() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-4">
                     {filteredProducts.map((product) => (
                       <Card
                         key={product.id}
@@ -287,7 +287,8 @@ export default function SalesPage() {
                   </div>
 
                   <div className="border-t pt-4">
-                    <Table>
+                    <div className="overflow-x-auto">
+                      <Table>
                       <TableHeader>
                         <TableRow>
                           <TableHead>Item</TableHead>
@@ -331,6 +332,7 @@ export default function SalesPage() {
                         )}
                       </TableBody>
                     </Table>
+                    </div>
                   </div>
 
                   <div className="border-t pt-4 space-y-2">

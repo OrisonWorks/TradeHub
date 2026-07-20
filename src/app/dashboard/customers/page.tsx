@@ -157,9 +157,9 @@ export default function CustomersPage() {
     <div className="flex h-screen bg-slate-50">
       <Sidebar />
       <div className="flex-1 overflow-auto">
-        <div className="p-8">
-          <div className="flex justify-between items-center mb-8">
-            <h1 className="text-3xl font-bold">Customer Management</h1>
+        <div className="p-4 lg:p-8 pt-16 lg:pt-8">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 lg:mb-8 gap-4">
+            <h1 className="text-2xl lg:text-3xl font-bold">Customer Management</h1>
             <Dialog open={isAddDialogOpen} onOpenChange={(open) => {
               setIsAddDialogOpen(open)
               if (!open) {
@@ -173,7 +173,7 @@ export default function CustomersPage() {
                   Add Customer
                 </Button>
               </DialogTrigger>
-              <DialogContent>
+              <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
                   <DialogTitle>{editingCustomer ? 'Edit Customer' : 'Add New Customer'}</DialogTitle>
                 </DialogHeader>
@@ -281,7 +281,8 @@ export default function CustomersPage() {
               </div>
             </CardHeader>
             <CardContent>
-              <Table>
+              <div className="overflow-x-auto">
+                <Table>
                 <TableHeader>
                   <TableRow>
                     <TableHead>Name</TableHead>
@@ -350,6 +351,7 @@ export default function CustomersPage() {
                   )}
                 </TableBody>
               </Table>
+              </div>
             </CardContent>
           </Card>
         </div>

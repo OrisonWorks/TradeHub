@@ -146,9 +146,9 @@ export default function ExpensesPage() {
     <div className="flex h-screen bg-slate-50">
       <Sidebar />
       <div className="flex-1 overflow-auto">
-        <div className="p-8">
-          <div className="flex justify-between items-center mb-8">
-            <h1 className="text-3xl font-bold">Expense Management</h1>
+        <div className="p-4 lg:p-8 pt-16 lg:pt-8">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 lg:mb-8 gap-4">
+            <h1 className="text-2xl lg:text-3xl font-bold">Expense Management</h1>
             <Dialog open={isAddDialogOpen} onOpenChange={(open) => {
               setIsAddDialogOpen(open)
               if (!open) resetForm()
@@ -159,7 +159,7 @@ export default function ExpensesPage() {
                   Add Expense
                 </Button>
               </DialogTrigger>
-              <DialogContent>
+              <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
                   <DialogTitle>Add New Expense</DialogTitle>
                 </DialogHeader>
@@ -280,7 +280,8 @@ export default function ExpensesPage() {
               <CardTitle>All Expenses</CardTitle>
             </CardHeader>
             <CardContent>
-              <Table>
+              <div className="overflow-x-auto">
+                <Table>
                 <TableHeader>
                   <TableRow>
                     <TableHead>Date</TableHead>
@@ -326,6 +327,7 @@ export default function ExpensesPage() {
                   )}
                 </TableBody>
               </Table>
+              </div>
             </CardContent>
           </Card>
         </div>
