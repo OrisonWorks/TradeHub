@@ -185,7 +185,7 @@ export default function OrdersPage() {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="space-y-2">
                     <Label htmlFor="customer">Customer *</Label>
-                    <Select value={formData.customer_id} onValueChange={(value) => setFormData({ ...formData, customer_id: value })} required>
+                    <Select value={formData.customer_id} onValueChange={(value) => setFormData({ ...formData, customer_id: value || '' })} required>
                       <SelectTrigger>
                         <SelectValue placeholder="Select customer" />
                       </SelectTrigger>
